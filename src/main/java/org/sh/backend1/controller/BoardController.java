@@ -28,6 +28,10 @@ public class BoardController {
     @GetMapping("/read/{id}") //경로에 자원{id}이 들어감.
     public String read(@PathVariable("id") Long id, Model model){
         model.addAttribute("board", boardService.findById(id));
+        //컨트롤러 → 뷰로 데이터를 전달할 때 Model 객체가 중간 역할을 합니다.
+        //
+        //Model: 데이터(키-값 쌍)를 저장하는 공간.
+        //addAttribute(String name, Object value): 데이터를 name이라는 키로 저장하고, value라는 값을 연결.
         return "/board/read";
     }
     @GetMapping("/modify/{id}")

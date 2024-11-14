@@ -18,7 +18,6 @@ public class CommentServiceImpl implements CommentService {
     private final CommentRepository commentRepository;
     private final BoardRepository boardRepository;
 
-
     @Override
     public Comment saveComment(Long boardId, CommentDTO commentDTO) { //댓글 저장 메서드
         Board board = boardRepository.findById(boardId).orElseThrow(); //boardId를 Board에서 갖고옴
